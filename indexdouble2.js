@@ -44,8 +44,8 @@ start();
   var valorapostaint = parseFloat(valoraposta);
 
   await page.goto('https://blaze.com/pt?modal=auth&tab=login');
-  await page.type('[name="username"]', "joao.vms22@hotmail.com");
-  await page.type('[name="password"]', "Joao@0302");
+  await page.type('[name="username"]', process.env.EMAIL);
+  await page.type('[name="password"]', process.env.PASSWOORD);
   await page.evaluate(() => {document.querySelector('.red.submit.undefined').click()});
   await page.waitForNavigation();
   await page.goto('https://blaze.com/pt/games/double');
